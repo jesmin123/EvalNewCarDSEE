@@ -6,6 +6,10 @@ import 'package:new_car_dse/constants/colors.dart';
 import 'package:new_car_dse/constants/dimens.dart';
 import 'package:new_car_dse/constants/strings.dart';
 
+
+import '../../constants/strings.dart';
+
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -31,6 +35,8 @@ class _HomePageState extends State<HomePage> {
                         shrinkWrap: true,
                         children: [
                           ListTile(
+                            onTap:(){Navigator.pushNamed(context,DEAL_OK_CASE);
+                            },
                             leading: Icon(Icons.beenhere_outlined,
                                 color: PRIMARY_COLOR),
                             title: Text(
@@ -46,6 +52,24 @@ class _HomePageState extends State<HomePage> {
 
                           ),
                           ListTile(
+                            onTap:(){Navigator.pushNamed(context,ASSIGNED_CASES);
+                              },
+                            leading: Icon(Icons.assignment_turned_in_outlined,
+                                color: PRIMARY_COLOR),
+                            title: Text(
+                              ASSIGNED_CASES ,
+                              style: AppFontStyle.regularTextStyle2(
+                                  APP_BLACK_COLOR,
+                                  textSize: 18.0),
+                            ),
+                            trailing: Icon(
+                              Icons.navigate_next,
+                              color: PRIMARY_COLOR,
+                            ),
+
+                          ),
+                          ListTile(
+
                             leading: Icon(Icons.hourglass_empty_outlined,
                                 color: PRIMARY_COLOR),
                             title: Text(
@@ -59,10 +83,13 @@ class _HomePageState extends State<HomePage> {
                               color: PRIMARY_COLOR,
                             ),
                             onTap: (){
-
+                              Navigator.pushNamed(context, FUND_TRANSFERS);
                             },
                           ),
                           ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, JUNK_LEADS);
+                              },
                             leading: Icon(Icons.assignment_outlined,
                                 color: PRIMARY_COLOR),
                             title: Text(
@@ -90,9 +117,14 @@ class _HomePageState extends State<HomePage> {
                               color: PRIMARY_COLOR,
                             ),
                             onTap: (){
+                              Navigator.pushNamed(context, RATES_OFFERED);
                             },
                           ),
                           ListTile(
+                            onTap: (){
+                              Navigator.pushNamed(context, PENDING_CASES);
+
+                            },
                             leading: Icon(Icons.assignment_outlined,
                                 color: PRIMARY_COLOR),
                             title: Text(
@@ -120,6 +152,27 @@ class _HomePageState extends State<HomePage> {
                               color: PRIMARY_COLOR,
                             ),
                             onTap: (){
+
+                              Navigator.pushNamed(context, EVALUATIONS);
+                            },
+
+                          ),
+                          ListTile(
+                            leading: Icon(Icons.assignment_late_outlined,
+                                color: PRIMARY_COLOR),
+                            title: Text(
+                              EVALUATIONS_NOT_DONE,
+                              style: AppFontStyle.regularTextStyle2(
+                                  APP_BLACK_COLOR,
+                                  textSize: 18.0),
+                            ),
+                            trailing: Icon(
+                              Icons.navigate_next,
+                              color: PRIMARY_COLOR,
+                            ),
+                            onTap: (){
+
+                              Navigator.pushNamed(context, EVALUATIONS_NOT_DONE);
                             },
 
                           ),
@@ -178,37 +231,38 @@ class _HomePageState extends State<HomePage> {
           }
         },
       itemBuilder: (context) => [
-      PopupMenuItem(
 
-      value: 1,
-      child: Row(
-        children: [
-          Icon(Icons.assignment_ind_outlined, color: PRIMARY_COLOR,),
-          SizedBox(width: LINE_HEIGHT *0.5,),
-          Text('Team Lead', style: AppFontStyle.headingTextStyle(APP_BLACK_COLOR),)
-        ],
-      ),
+        PopupMenuItem(
+
+        value: 1,
+            child: Row(
+              children: [
+                Icon(Icons.assignment_ind_outlined, color: PRIMARY_COLOR,),
+                SizedBox(width: LINE_HEIGHT *0.5,),
+                Text('Team Lead', style: AppFontStyle.headingTextStyle(APP_BLACK_COLOR),)
+              ],
+            ),
 
     ),
-    PopupMenuDivider(),
-    PopupMenuItem(
+               PopupMenuDivider(),
+            PopupMenuItem(
 
-    value: 2,
-    child: Row(
-      children: [
-        Icon(Icons.logout, color: PRIMARY_COLOR,),
-        SizedBox(width: LINE_HEIGHT *0.5,),
-        Text('LogOut', style: AppFontStyle.headingTextStyle(APP_BLACK_COLOR),)
-      ],
-    ),
-    ),
-    ],
-    icon: Icon(Icons.more_vert_outlined, color: PRIMARY_COLOR,),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-    offset: Offset(0, 100),
-    ),
-        ],
-      ),
+                value: 2,
+                child: Row(
+                  children: [
+                    Icon(Icons.logout, color: PRIMARY_COLOR,),
+                    SizedBox(width: LINE_HEIGHT *0.5,),
+                    Text('LogOut', style: AppFontStyle.headingTextStyle(APP_BLACK_COLOR),)
+                  ],
+                ),
+                ),
+                ],
+                icon: Icon(Icons.more_vert_outlined, color: PRIMARY_COLOR,),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                offset: Offset(0, 100),
+                ),
+                    ],
+                  ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

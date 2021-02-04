@@ -136,5 +136,11 @@ class AppFontStyle{
         fontFamily: "Exo"
     );
   }
+ static  TextStyle boldAppBarTitle(Color color,{num textSize}){
+      return TextStyle( color: color,
+          fontSize: 18,
+          fontWeight: FontWeight.w600,
+          fontFamily: "Exo"
+          );}
 
 }

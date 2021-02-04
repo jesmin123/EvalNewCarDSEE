@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:new_car_dse/constants/app_font_style.dart';
 import 'package:new_car_dse/constants/colors.dart';
 import 'package:new_car_dse/constants/dimens.dart';
+import 'package:new_car_dse/ui/widget/app_bar.dart';
 
 class NewEnquiryPage extends StatefulWidget {
   @override
@@ -24,20 +25,14 @@ class _NewEnquiryPageState extends State<NewEnquiryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: APP_WHITE_COLOR,
-        appBar: AppBar(
-        backgroundColor: APP_WHITE_COLOR,
-        elevation: 0,
-        centerTitle: true,
-        title: Text(
-        'New Enquiry',
-        style: AppFontStyle.appBarTittle(PRIMARY_COLOR),
-    ),
-    ),
+        appBar:Appbar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.only(left:16.0,right: 16.0,bottom: 16.0),
           child: Column(
             children: [
+            Text('New Enquiry', style: AppFontStyle.appBarTittle(APP_BLACK_COLOR),),
+              SizedBox(height: 15,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
