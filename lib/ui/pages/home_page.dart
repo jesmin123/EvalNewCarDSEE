@@ -157,25 +157,6 @@ class _HomePageState extends State<HomePage> {
                             },
 
                           ),
-                          ListTile(
-                            leading: Icon(Icons.assignment_late_outlined,
-                                color: PRIMARY_COLOR),
-                            title: Text(
-                              EVALUATIONS_NOT_DONE,
-                              style: AppFontStyle.regularTextStyle2(
-                                  APP_BLACK_COLOR,
-                                  textSize: 18.0),
-                            ),
-                            trailing: Icon(
-                              Icons.navigate_next,
-                              color: PRIMARY_COLOR,
-                            ),
-                            onTap: (){
-
-                              Navigator.pushNamed(context, EVALUATIONS_NOT_DONE);
-                            },
-
-                          ),
                         ],
                       ),
                     ),
@@ -239,7 +220,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Icon(Icons.assignment_ind_outlined, color: PRIMARY_COLOR,),
                 SizedBox(width: LINE_HEIGHT *0.5,),
-                Text('Team Lead', style: AppFontStyle.headingTextStyle(APP_BLACK_COLOR),)
+                Text('Team Leader', style: AppFontStyle.headingTextStyle(APP_BLACK_COLOR),)
               ],
             ),
 
